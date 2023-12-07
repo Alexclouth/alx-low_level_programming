@@ -1,31 +1,23 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
 
-
 /**
-* print_list - check the code for Holberton School students.
-* @h: name of the list
-* Return: the number of nodes.
-*/
+ * print_list - print list of elements
+ * @h: input
+ * Return: Number of Nodes
+ */
 size_t print_list(const list_t *h)
 {
-int count = 0;
-
-
-while (h)
-{ 
-if (h->str == NULL)
-{
-printf("[0] (nil)\n");
-}
-else
-{
-printf("[%d] %s\n", h->len, h->str);
-}
-count++;
-h = h->next;
-}
-return (count);
+	if (h)
+	{
+		if (h->str)
+			printf("[%d] %s%s", h->len, h->str, "\n");
+		else
+			printf("[%d] %s%s", 0, "(nil)", "\n");
+		if (h->next)
+		{
+			return (1 + print_list(h->next));
+		}
+		return (1);
+	}
+	return (0);
 }
