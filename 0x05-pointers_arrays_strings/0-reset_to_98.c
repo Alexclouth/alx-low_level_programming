@@ -1,16 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
-/*reset to 98
+#include "main.h"
+/**
+*reset_to_98 - reset value of an integer to 98
+*@n: parameter targeted
+*Return : nothing
 */
-void reset_to_98(int *n){
-*n=98;
-}
-/* main - entry point
-*return -always zero
-*/
-int main(){
-int n=402;
-printf("n = %d",n);
-reset_to_98(&n);
-printf("\nn = %d",n);
+
+void reset_to_98(int *n)
+{
+*n = 98;
 }
